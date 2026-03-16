@@ -296,7 +296,7 @@ button { font-family: var(--ff); }
   max-width: 460px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 16px 40px rgba(0,36,50,0.15));
+  filter: none;
 }
 
 /* ————— VALUE CARDS (3-up, SEPARATE from hero) ————— */
@@ -940,6 +940,126 @@ button { font-family: var(--ff); }
   font-weight: 500;
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+/* ————— 4-STEP PROCESS SECTION ————— */
+.steps-section {
+  background: var(--navy);
+  padding: 80px 32px;
+}
+.steps-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.steps-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.steps-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.steps-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.steps-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 52px;
+  left: calc(12.5% + 10px);
+  right: calc(12.5% + 10px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(252,174,3,0.3) 100%);
+  z-index: 0;
+}
+.step-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--r-feature);
+  padding: 36px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.25s ease, transform 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+.step-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+}
+.step-card--highlight {
+  background: var(--white);
+  border-color: transparent;
+}
+.step-card--highlight .step-number { color: var(--navy); }
+.step-card--highlight .step-title { color: var(--navy); }
+.step-card--highlight .step-desc { color: var(--text-secondary); }
+.step-card--highlight:hover { background: var(--white); }
+.step-number-wrap {
+  width: 44px;
+  height: 44px;
+  background: rgba(252, 174, 3, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.step-card--highlight .step-number-wrap {
+  background: rgba(252, 174, 3, 0.12);
+}
+.step-number {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.step-icon {
+  width: 40px;
+  height: 40px;
+}
+.step-icon svg { width: 100%; height: 100%; }
+.step-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.3;
+}
+.step-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  flex: 1;
+}
+.step-cta {
+  margin-top: 8px;
+  font-size: 14px;
+  padding: 12px 22px;
+  width: 100%;
+  text-align: center;
 }
 
 /* ————— FINAL CTA — Sky blue gradient (matching live site) ————— */
