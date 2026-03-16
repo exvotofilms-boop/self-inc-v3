@@ -1,98 +1,114 @@
-// Self.inc V2 - main.js
+/* =====================================================
+   Self.inc V3 — main.js
+   Counter, carousel, FAQ, mobile nav
+   ===================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav
-  const hamburger = document.getElementById('nav-hamburger');
-  const mobileMenu = document.getElementById('nav-mobile-menu');
+
+  /* ————— MOBILE NAV ————— */
+  const hamburger = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
   }
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    if (!btn || !answer) return;
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('.faq-item').forEach(other => {
-        other.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
-        other.querySelector('.faq-answer')?.classList.remove('open');
+  /* ————— FAQ ACCORDIONS ————— */
+  const faqList = document.getElementById('faq-list');
+  if (faqList) {
+    faqList.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // Close all first
+        faqList.querySelectorAll('.faq-question').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        // Toggle clicked
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('open');
+        }
       });
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      answer.classList.toggle('open', !isOpen);
     });
-  });
+  }
 
-  // Quote carousel
+  /* ————— QUOTE CAROUSEL ————— */
   const slides = document.querySelectorAll('.quote-slide');
   const dots = document.querySelectorAll('.dot');
-  let currentSlide = 0;
-  let autoplayInterval;
-  const goToSlide = (index) => {
-    slides.forEach(s => s.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide]?.classList.add('active');
-    dots[currentSlide]?.classList.add('active');
-  };
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      goToSlide(parseInt(dot.dataset.index, 10));
-      clearInterval(autoplayInterval);
-      autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+  let current = 0;
+  let autoTimer;
+
+  function showSlide(n) {
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === n);
     });
-  });
-  if (slides.length > 0) {
-    autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === n);
+    });
+    current = n;
   }
 
-  // Member counter
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(nextSlide, 5000);
+  }
+
+  if (slides.length > 0) {
+    dots.forEach(d => {
+      d.addEventListener('click', () => {
+        clearInterval(autoTimer);
+        showSlide(Number(d.dataset.slide));
+        startAuto();
+      });
+    });
+    startAuto();
+  }
+
+  /* ————— MEMBER COUNTER (Animate on scroll) ————— */
   const counterEl = document.getElementById('member-counter');
   if (counterEl) {
-    const target = parseInt(counterEl.dataset.target, 10) || 4640741;
-    const startValue = target - 500000;
-    const duration = 2000;
-    const start = performance.now();
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        const update = (now) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          counterEl.textContent = Math.round(startValue + (target - startValue) * eased).toLocaleString();
-          if (progress < 1) requestAnimationFrame(update);
-        };
-        requestAnimationFrame(update);
-        observer.disconnect();
+    const target = 4640567;
+    let counted = false;
+
+    function animateCounter() {
+      if (counted) return;
+      counted = true;
+      const duration = 2000;
+      const start = performance.now();
+      const startVal = 4000000;
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const val = Math.floor(startVal + (target - startVal) * eased);
+        counterEl.textContent = val.toLocaleString();
+        if (progress < 1) requestAnimationFrame(tick);
       }
-    }, { threshold: 0.5 });
-    observer.observe(counterEl);
+
+      requestAnimationFrame(tick);
+    }
+
+    // IntersectionObserver for scroll trigger
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            animateCounter();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(counterEl);
+    } else {
+      animateCounter();
+    }
   }
 
-  // Hero form
-  const heroForm = document.getElementById('hero-form');
-  if (heroForm) {
-    heroForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('hero-email')?.value;
-      if (email) alert(`Thanks! We'll send info to ${email}`);
-    });
-  }
-
-  // CTA form
-  const ctaForm = document.getElementById('cta-form');
-  if (ctaForm) {
-    ctaForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('cta-email')?.value;
-      if (email) alert(`Thanks! We'll send info to ${email}`);
-    });
-  }
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-  });
 });

@@ -1,403 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Self – Your Credit Building Toolkit</title>
-  <meta name="description" content="Self helps you build credit and savings at the same time. Start the path to financial freedom with Self's Credit Builder Account, secured Visa card, and more." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self — Your Credit Building Toolkit</title>
+  <meta name="description" content="Build credit, save money, and take control of your financial future with Self. Join over 4 million members on the path to financial freedom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ═══════════ NAV ═══════════ -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <svg width="80" height="30" viewBox="0 0 120 44" fill="none"><text x="0" y="36" font-family="Montserrat, sans-serif" font-weight="800" font-size="42" fill="#3B8AD9">Self.</text></svg>
-      </a>
+      <a href="/" class="nav-logo">Self<span>.</span></a>
       <div class="nav-links">
         <div class="nav-dropdown">
-          <a href="#" class="nav-link">Products <span class="caret">&#9660;</span></a>
+          <a class="nav-link" href="#">Products <span class="caret">▾</span></a>
           <div class="dropdown-menu">
             <a href="#">Credit Builder Account</a>
             <a href="#">Self Visa® Credit Card</a>
-            <a href="#">Rent &amp; Bills Reporting</a>
+            <a href="#">Rent & Bills Reporting</a>
             <a href="#">Self Cash</a>
           </div>
         </div>
         <div class="nav-dropdown">
-          <a href="#" class="nav-link">All About Credit <span class="caret">&#9660;</span></a>
+          <a class="nav-link" href="#">All About Credit <span class="caret">▾</span></a>
           <div class="dropdown-menu">
-            <a href="#">How Credit Works</a>
+            <a href="#">Credit 101</a>
             <a href="#">Credit Scores</a>
             <a href="#">Credit Reports</a>
-            <a href="#">Building Credit</a>
+            <a href="#">Blog</a>
           </div>
         </div>
-        <a href="#" class="nav-link">Support</a>
-        <a href="#" class="nav-link">1 (877) 883-0999</a>
+        <a class="nav-link" href="#">Support</a>
+        <a class="nav-link" href="#">1 (877) 883-0999</a>
       </div>
       <div class="nav-actions">
-        <a href="#" class="nav-login">Log In</a>
-        <a href="#" class="btn btn-orange">Get started</a>
+        <a class="nav-login" href="#">Log In</a>
+        <a class="btn btn-gold nav-cta" href="#">Get started</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" id="hamburger-btn" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <div class="nav-mobile-menu" id="mobile-menu">
       <a href="#">Products</a>
       <a href="#">All About Credit</a>
       <a href="#">Support</a>
-      <a href="#">1 (877) 883-0999</a>
       <a href="#">Log In</a>
-      <a href="#" class="btn btn-orange">Get started</a>
+      <a class="btn btn-gold" href="#">Get started</a>
     </div>
   </nav>
 
-  <!-- HERO + VALUE CARDS WRAPPER (seamless visual block) -->
-  <section class="hero-bg">
-    <!-- Hero rounded card -->
-    <div class="hero-container">
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero-section">
+    <div class="hero-card">
       <div class="hero-content">
-        <h1 class="hero-headline">Your credit<br>building toolkit.</h1>
+        <h1 class="hero-headline">Your credit building toolkit.</h1>
         <p class="hero-sub">Start the path to financial freedom.</p>
-        <form class="hero-form" id="hero-form">
-          <input type="email" placeholder="Enter your email" class="hero-input" id="hero-email" />
-          <button type="submit" class="btn btn-orange">Get started with Self</button>
+        <form class="hero-form" onsubmit="return false;">
+          <input type="email" class="hero-input" placeholder="Enter your email" aria-label="Email address">
+          <button type="submit" class="btn btn-gold">Get started with Self</button>
         </form>
       </div>
       <div class="hero-image">
-        <img src="images/hero-phone.png" alt="Self app on phone with Visa card" class="hero-phone-img" />
+        <img src="images/hero-phone.png" alt="Self app showing credit builder account and Visa card" class="hero-phone-img">
       </div>
     </div>
+  </section>
 
-    <!-- VALUE CARDS — visually adjacent to hero card, no gap -->
-    <div class="value-cards-wrap">
-      <div class="container">
-        <div class="value-cards-grid">
-          <div class="value-card">
-            <div class="value-card-top value-card-top--blue">
-              <!-- Credit score gauge SVG -->
-              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:160px">
-                <path d="M20 120 A80 80 0 0 1 180 120" stroke="#1a3a5c" stroke-width="16" fill="none" stroke-linecap="round"/>
-                <path d="M20 120 A80 80 0 0 1 80 48" stroke="#e23c3c" stroke-width="16" fill="none" stroke-linecap="round"/>
-                <path d="M80 48 A80 80 0 0 1 130 40" stroke="#f0a500" stroke-width="16" fill="none" stroke-linecap="round"/>
-                <path d="M130 40 A80 80 0 0 1 167 65" stroke="#8bc34a" stroke-width="16" fill="none" stroke-linecap="round"/>
-                <path d="M167 65 A80 80 0 0 1 180 120" stroke="#4caf50" stroke-width="16" fill="none" stroke-linecap="round"/>
-                <rect x="95" y="108" width="10" height="25" rx="5" fill="#4caf50"/>
-                <ellipse cx="90" cy="100" rx="16" ry="10" fill="#4caf50"/>
-                <ellipse cx="110" cy="95" rx="16" ry="10" fill="#66bb6a"/>
-                <rect x="85" y="128" width="30" height="8" rx="3" fill="#e07b39"/>
-              </svg>
-            </div>
-            <div class="value-card-bottom">
-              <h3>Grow your score</h3>
-              <p>See a 47 point* average lift in your credit score with a Credit Builder Account.</p>
-            </div>
+  <!-- ═══════════ VALUE CARDS (3-up, separate from hero) ═══════════ -->
+  <section class="value-section">
+    <div class="value-grid">
+      <!-- Card 1: Score Growth -->
+      <div class="value-card">
+        <div class="value-card-top value-card-top--blue">
+          <div class="score-widget">
+            <div class="score-number">+47</div>
+            <div class="score-label">points</div>
           </div>
-          <div class="value-card">
-            <div class="value-card-top value-card-top--dark">
-              <div class="mini-credit-card">
-                <div class="mini-card-logo">Self.</div>
-                <div class="mini-card-chip"><svg viewBox="0 0 28 22" fill="none"><rect x="1" y="1" width="26" height="20" rx="3" fill="#c8a84b" stroke="#b8973a"/><line x1="10" y1="1" x2="10" y2="21" stroke="#b8973a" stroke-width="1.5"/><line x1="18" y1="1" x2="18" y2="21" stroke="#b8973a" stroke-width="1.5"/><line x1="1" y1="8" x2="27" y2="8" stroke="#b8973a" stroke-width="1.5"/><line x1="1" y1="14" x2="27" y2="14" stroke="#b8973a" stroke-width="1.5"/></svg></div>
-                <div class="mini-card-visa">VISA</div>
-              </div>
+        </div>
+        <div class="value-card-bottom">
+          <h3>Grow your score</h3>
+          <p>See a 47 point* average lift in your credit score with a Credit Builder Account.</p>
+        </div>
+      </div>
+      <!-- Card 2: Self Visa Card -->
+      <div class="value-card">
+        <div class="value-card-top value-card-top--navy">
+          <div class="mini-card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <div class="mini-card-chip"></div>
+              <div class="mini-card-logo">Self.</div>
             </div>
-            <div class="value-card-bottom">
-              <h3>Easy to get, powerful to use</h3>
-              <p>Increase your spending power with Self secured Credit Card. No credit check, high approval rates, fast application!</p>
-            </div>
+            <div class="mini-card-visa">VISA</div>
           </div>
-          <div class="value-card">
-            <div class="value-card-top value-card-top--navy">
-              <!-- Bureau logos — real generated images on navy bg -->
-              <div class="bureau-logos">
-                <img src="images/experian.png" alt="Experian" class="bureau-logo-img" />
-                <img src="images/equifax.png" alt="Equifax" class="bureau-logo-img" />
-                <img src="images/transunion.png" alt="TransUnion" class="bureau-logo-img" />
-              </div>
-            </div>
-            <div class="value-card-bottom">
-              <h3>Build credit fast</h3>
-              <p>Report on time rent to all 3 bureaus, so you build credit while living life.</p>
-            </div>
+        </div>
+        <div class="value-card-bottom">
+          <h3>Easy to get, powerful to use</h3>
+          <p>Increase your spending power with Self secured Credit Card. No credit check, high approval rates, fast application!</p>
+        </div>
+      </div>
+      <!-- Card 3: Bureau Reporting -->
+      <div class="value-card">
+        <div class="value-card-top value-card-top--teal">
+          <div class="bureau-logos">
+            <img src="images/experian.png" alt="Experian" class="bureau-logo-img">
+            <img src="images/equifax.png" alt="Equifax" class="bureau-logo-img">
+            <img src="images/transunion.png" alt="TransUnion" class="bureau-logo-img">
           </div>
+        </div>
+        <div class="value-card-bottom">
+          <h3>Build credit fast</h3>
+          <p>Report on time rent to all 3 bureaus, so you build credit while living life.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BADGES & MEMBER COUNT -->
+  <!-- ═══════════ APP STORE BADGES ═══════════ -->
   <section class="badges-section">
-    <div class="container">
-      <div class="badges-row">
-        <div class="store-badge">
-          <!-- Apple logo SVG -->
-          <svg viewBox="0 0 24 24" fill="white" width="36" height="36"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <div class="store-badge-text">
-            <div class="store-name">App Store</div>
-            <div class="store-rating">4.9/5</div>
-            <div class="store-count">286k ratings</div>
-          </div>
+    <div class="badges-row">
+      <!-- Apple -->
+      <div class="store-badge">
+        <div class="store-icon-wrap">
+          <svg class="store-icon" viewBox="0 0 24 24" fill="#002432"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.81-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="store-name">App Store</span>
         </div>
-        <div class="store-badge">
-          <!-- Google Play — proper 4-color triangle SVG -->
-          <svg viewBox="0 0 24 24" width="36" height="36" fill="none">
-            <!-- Left edge — blue -->
-            <path d="M3.18 0.34 C2.68 0.62 2.35 1.14 2.35 1.74 L2.35 22.26 C2.35 22.86 2.68 23.38 3.18 23.66 L3.3 23.74 L14.72 12 L3.3 0.26 Z" fill="#4285F4"/>
-            <!-- Bottom-right — green -->
-            <path d="M18.38 15.83 L14.72 12 L3.18 23.66 C3.53 23.9 3.96 23.97 4.36 23.83 L18.38 15.83 Z" fill="#34A853"/>
-            <!-- Top-right — red -->
-            <path d="M18.38 8.17 L4.36 0.17 C3.96 0.03 3.53 0.1 3.18 0.34 L14.72 12 Z" fill="#EA4335"/>
-            <!-- Right point — yellow -->
-            <path d="M21.65 10.44 L18.38 8.17 L14.72 12 L18.38 15.83 L21.65 13.56 C22.44 13.08 22.44 10.92 21.65 10.44 Z" fill="#FBBC04"/>
+        <div class="store-rating-wrap">
+          <div class="store-rating-num">4.9/5</div>
+          <div class="store-rating-count">286k ratings</div>
+        </div>
+      </div>
+      <!-- Google Play -->
+      <div class="store-badge">
+        <div class="store-icon-wrap">
+          <svg class="store-icon" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient id="gp1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00C4FF"/><stop offset="100%" stop-color="#00F0FF"/></linearGradient>
+              <linearGradient id="gp2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#00A850"/><stop offset="100%" stop-color="#5EC76A"/></linearGradient>
+              <linearGradient id="gp3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD200"/><stop offset="100%" stop-color="#FFA000"/></linearGradient>
+              <linearGradient id="gp4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF3A44"/><stop offset="100%" stop-color="#C31162"/></linearGradient>
+            </defs>
+            <path d="M4 2.5v19l9.5-9.5z" fill="url(#gp1)"/>
+            <path d="M4 21.5l9.5-9.5 3 3z" fill="url(#gp2)"/>
+            <path d="M16.5 15l3-3-3-3-9.5 9.5z" fill="url(#gp3)"/>
+            <path d="M4 2.5l12.5 9.5-3 3z" fill="url(#gp4)"/>
           </svg>
-          <div class="store-badge-text">
-            <div class="store-name">Google Play</div>
-            <div class="store-rating">4.5/5</div>
-            <div class="store-count">90k ratings</div>
-          </div>
+          <span class="store-name">Google Play</span>
         </div>
-      </div>
-      <div class="member-count-section">
-        <p class="place-text">The place for credit builders</p>
-        <div class="member-count-row">
-          <!-- V3: image laurel, larger -->
-          <img src="images/laurel.png" alt="" class="laurel laurel-left" />
-          <div class="member-count"><span id="member-counter" data-target="4640741">4,640,741</span> members</div>
-          <img src="images/laurel.png" alt="" class="laurel laurel-right" style="transform:scaleX(-1)" />
-        </div>
-        <p class="featured-label">As featured in:</p>
-        <div class="press-logos">
-          <span class="press-logo press-logo--npr">npr</span>
-          <span class="press-logo press-logo--nyt">The New York Times</span>
-          <span class="press-logo press-logo--forbes"><em>Forbes</em></span>
-          <span class="press-logo press-logo--bi">BUSINESS INSIDER</span>
-          <span class="press-logo press-logo--nw">nerdwallet</span>
-          <span class="press-logo press-logo--yahoo">yahoo!news</span>
-          <span class="press-logo press-logo--newsweek">Newsweek</span>
+        <div class="store-rating-wrap">
+          <div class="store-rating-num">4.5/5</div>
+          <div class="store-rating-count">90k ratings</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURE: BUILD SAVINGS -->
+  <!-- ═══════════ MEMBER COUNT + PRESS ═══════════ -->
+  <section class="member-section">
+    <p class="member-label">The place for credit builders</p>
+    <div class="member-count-row">
+      <img src="images/laurel.png" alt="" class="laurel-img" aria-hidden="true">
+      <div>
+        <div class="member-number" id="member-counter">4,640,567</div>
+        <div class="member-word">members</div>
+      </div>
+      <img src="images/laurel.png" alt="" class="laurel-img laurel-right" aria-hidden="true">
+    </div>
+    <p class="featured-label">As featured in:</p>
+    <div class="press-logos">
+      <span class="press-logo">npr</span>
+      <span class="press-logo press-logo--nyt">The New York Times</span>
+      <span class="press-logo press-logo--forbes">Forbes</span>
+      <span class="press-logo press-logo--bi">BUSINESS INSIDER</span>
+      <span class="press-logo">N nerdwallet</span>
+      <span class="press-logo press-logo--yahoo">yahoo!news</span>
+      <span class="press-logo press-logo--nw">Newsweek</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ FEATURE 1: Credit Builder ═══════════ -->
   <section class="feature-section">
-    <div class="container">
-      <div class="feature-card feature-card--dark">
-        <div class="feature-content">
-          <h2>Build savings while<br>building credit</h2>
-          <p>Build savings &amp; credit with Self's Credit Builder Account — plus, lift up your credit by reporting rent and bills.</p>
-          <a href="#" class="btn btn-outline-yellow">Learn more</a>
-        </div>
-        <div class="feature-image">
-          <img src="images/savings.png" alt="Woman building credit and savings" style="max-width:340px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.1))" />
+    <div class="feature-card feature-card--dark">
+      <div class="feature-content">
+        <h2>Build credit &amp; savings at the same time.</h2>
+        <p>A Credit Builder Account is a small installment loan that helps you establish payment history while setting aside savings. At the end, you get your money back.</p>
+        <a href="#" class="btn btn-gold">Learn More</a>
+      </div>
+      <div class="feature-image">
+        <img src="images/savings-illustration.png" alt="Credit builder savings illustration">
+      </div>
+    </div>
+
+    <!-- FEATURE 2: Visa Card -->
+    <div class="feature-card feature-card--gold">
+      <div class="feature-image">
+        <img src="images/credit-cards.png" alt="Self Visa credit card">
+      </div>
+      <div class="feature-content">
+        <h2>Unlock your Self Visa® Credit Card.</h2>
+        <p>No credit check to apply. Build your credit while you spend with a secured card that reports to all 3 bureaus. Get up to $3,000 in spending power.</p>
+        <a href="#" class="btn btn-outline-navy">Learn More</a>
+      </div>
+    </div>
+
+    <!-- FEATURE 3: Self Cash -->
+    <div class="feature-card feature-card--dark">
+      <div class="feature-content">
+        <h2>Cash that doesn't hurt your credit.</h2>
+        <p>Stay in control! Self Cash helps with unexpected expenses without hurting your credit goals. Get the cash you need, responsibly.</p>
+        <a href="#" class="btn btn-gold">Learn More</a>
+      </div>
+      <div class="feature-image">
+        <div class="cash-widget">
+          <div class="cash-label">Self Cash</div>
+          <div class="cash-sub">Available Balance</div>
+          <div class="cash-amount">$500</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURE: CREDIT CARD -->
-  <section class="feature-section">
-    <div class="container">
-      <div class="feature-card feature-card--gold">
-        <div class="feature-image">
-          <img src="images/credit-cards.png" alt="Self Visa credit cards" style="max-width:340px;mix-blend-mode:multiply;border-radius:12px" />
+  <!-- ═══════════ TESTIMONIALS ═══════════ -->
+  <section class="testimonials-section">
+    <h2 class="section-title">Hear results from real people</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-thumb">
+          <img src="images/testi-1.png" alt="Testimonial from Tania">
+          <div class="play-pill">
+            <span class="play-icon"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></span>
+            Play video (30 sec)
+          </div>
         </div>
-        <div class="feature-content">
-          <h2>Turn everyday purchases into credit history.</h2>
-          <p>Self's secured and unsecured credit cards help you easily build credit. Reports to all 3 credit bureaus, apply in minutes!</p>
-          <a href="#" class="btn btn-outline-dark">Learn more</a>
+        <div class="testi-info">
+          <div class="testi-name">Tania†</div>
+          <div class="testi-role">Self member since 2021</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-thumb">
+          <img src="images/testi-2.png" alt="Testimonial from Marcus">
+          <div class="play-pill">
+            <span class="play-icon"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></span>
+            Play video (49 sec)
+          </div>
+        </div>
+        <div class="testi-info">
+          <div class="testi-name">Marcus†</div>
+          <div class="testi-role">Self member since 2020</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-thumb">
+          <img src="images/testi-3.png" alt="Testimonial from David">
+          <div class="play-pill">
+            <span class="play-icon"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></span>
+            Play video (29 sec)
+          </div>
+        </div>
+        <div class="testi-info">
+          <div class="testi-name">David†</div>
+          <div class="testi-role">Self member since 2022</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-thumb">
+          <img src="images/testi-4.png" alt="Testimonial from Ashley">
+          <div class="play-pill">
+            <span class="play-icon"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></span>
+            Play video (43 sec)
+          </div>
+        </div>
+        <div class="testi-info">
+          <div class="testi-name">Ashley†</div>
+          <div class="testi-role">Self member since 2021</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURE: SELF CASH -->
-  <section class="feature-section">
-    <div class="container">
-      <div class="feature-card feature-card--dark">
-        <div class="feature-content">
-          <h2>Keep life moving – money for when you need it.</h2>
-          <p>Self Cash gives you access to money from your Credit Builder Account for unexpected expenses. No credit check needed.</p>
-          <a href="#" class="btn btn-outline-yellow">Learn more</a>
-        </div>
-        <div class="feature-image">
-          <div class="cash-widget">
-            <div style="font-size:40px;margin-bottom:8px">💵</div>
-            <div class="cash-widget-label">Self Cash</div>
-            <div class="cash-widget-sub">Available balance</div>
-            <div class="cash-widget-amount">$430</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS — V3: No video overlay, candid portrait style -->
-  <section class="video-testis-section">
-    <div class="container">
-      <h2 class="section-title">Hear results from real people</h2>
-      <div class="video-testis-grid">
-        <div class="video-testi-card">
-          <div class="video-testi-thumb">
-            <img src="images/testi-1.png" alt="Tania, Self Member" />
-          </div>
-          <div class="video-testi-info"><p class="testi-name">Tania†</p><p class="testi-role">Self Member · Score up 83 pts</p></div>
-        </div>
-        <div class="video-testi-card">
-          <div class="video-testi-thumb">
-            <img src="images/testi-2.png" alt="Marcus, Self Member" />
-          </div>
-          <div class="video-testi-info"><p class="testi-name">Marcus†</p><p class="testi-role">Self Member · Score up 61 pts</p></div>
-        </div>
-        <div class="video-testi-card">
-          <div class="video-testi-thumb">
-            <img src="images/testi-3.png" alt="Jessica, Self Member" />
-          </div>
-          <div class="video-testi-info"><p class="testi-name">Jessica†</p><p class="testi-role">Self Member · Score up 47 pts</p></div>
-        </div>
-        <div class="video-testi-card">
-          <div class="video-testi-thumb">
-            <img src="images/testi-4.png" alt="David, Self Member" />
-          </div>
-          <div class="video-testi-info"><p class="testi-name">David†</p><p class="testi-role">Self Member · Score up 120 pts</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE CAROUSEL -->
+  <!-- ═══════════ QUOTE CAROUSEL ═══════════ -->
   <section class="quotes-section">
-    <div class="container">
-      <div class="quotes-card">
-        <h2 class="quotes-title">What people are saying</h2>
-        <div class="quotes-carousel" id="quotes-carousel">
-          <div class="quote-mark quote-mark-left">&ldquo;</div>
-          <div class="quote-mark quote-mark-right">&rdquo;</div>
-          <div class="quote-slide active">
-            <p class="quote-text">One of the things Self has helped me with is rebuilding my credit score and my credit score has gone up tremendously.</p>
-            <p class="quote-author">– Tania†</p>
-          </div>
-          <div class="quote-slide">
-            <p class="quote-text">Before Self I had no idea how credit worked. Now I'm on my way to buying a house. This app literally changed my financial life.</p>
-            <p class="quote-author">– Justin†, Self Member</p>
-          </div>
-          <div class="quote-slide">
-            <p class="quote-text">I went from a 480 to a 680 in less than a year. Self is legit. I tell everyone I know about this app.</p>
-            <p class="quote-author">– Keisha†, Self Member</p>
-          </div>
+    <div class="quotes-card">
+      <h2 class="quotes-title">What people are saying</h2>
+      <div class="quotes-carousel" id="quotes-carousel">
+        <span class="quote-mark quote-mark-left">"</span>
+        <span class="quote-mark quote-mark-right">"</span>
+        <div class="quote-slide active">
+          <p class="quote-text">One of the things Self has helped me with is rebuilding my credit score and my credit score has gone up tremendously.</p>
+          <span class="quote-author">— Tania†</span>
         </div>
-        <div class="carousel-dots" id="carousel-dots">
-          <button class="dot active" data-index="0"></button>
-          <button class="dot" data-index="1"></button>
-          <button class="dot" data-index="2"></button>
+        <div class="quote-slide">
+          <p class="quote-text">Self has literally changed my life. My score went from 480 to over 700 in less than a year.</p>
+          <span class="quote-author">— Marcus†</span>
         </div>
+        <div class="quote-slide">
+          <p class="quote-text">I never thought I'd be approved for a real credit card. Self made it possible, step by step.</p>
+          <span class="quote-author">— Ashley†</span>
+        </div>
+      </div>
+      <div class="carousel-dots" id="carousel-dots">
+        <button class="dot active" data-slide="0" aria-label="Show quote 1"></button>
+        <button class="dot" data-slide="1" aria-label="Show quote 2"></button>
+        <button class="dot" data-slide="2" aria-label="Show quote 3"></button>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="pricing-section" id="pricing">
-    <div class="container">
-      <h2 class="section-title">Choose your plan</h2>
-      <p class="pricing-sub">$9 one-time activation fee &bull; No credit check &bull; Cancel anytime</p>
-      <div class="pricing-grid">
-        <div class="pricing-card"><div class="pricing-amount">$25<span>/mo</span></div><div class="pricing-term">24 months</div><div class="pricing-receive">Receive <strong class="gold">$520</strong> at end</div><div class="pricing-detail">Reports to all 3 bureaus monthly</div><a href="#" class="btn btn-orange pricing-btn">Apply now &rarr;</a></div>
-        <div class="pricing-card pricing-card--popular"><div class="popular-badge">Most Popular</div><div class="pricing-amount">$35<span>/mo</span></div><div class="pricing-term">24 months</div><div class="pricing-receive">Receive <strong class="gold">$717</strong> at end</div><div class="pricing-detail">Reports to all 3 bureaus monthly</div><a href="#" class="btn btn-orange pricing-btn">Apply now &rarr;</a></div>
-        <div class="pricing-card"><div class="pricing-amount">$48<span>/mo</span></div><div class="pricing-term">24 months</div><div class="pricing-receive">Receive <strong class="gold">$986</strong> at end</div><div class="pricing-detail">Reports to all 3 bureaus monthly</div><a href="#" class="btn btn-orange pricing-btn">Apply now &rarr;</a></div>
-        <div class="pricing-card"><div class="pricing-amount">$150<span>/mo</span></div><div class="pricing-term">12 months</div><div class="pricing-receive">Receive <strong class="gold">$1,663</strong> at end</div><div class="pricing-detail">Reports to all 3 bureaus monthly</div><a href="#" class="btn btn-orange pricing-btn">Apply now &rarr;</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEARN ABOUT CREDIT -->
+  <!-- ═══════════ LEARN ABOUT CREDIT ═══════════ -->
   <section class="learn-section">
-    <div class="container">
-      <h2 class="section-title">Learn about credit building</h2>
-      <p class="learn-sub">Resources to help you on your credit journey</p>
-      <div class="learn-cards-grid">
-        <article class="learn-card"><div class="learn-card-img"><img src="images/article-1.png" alt="The 3 Main Types of Credit Explained" /></div><div class="learn-card-body"><h3>The 3 Main Types of Credit Explained</h3></div></article>
-        <article class="learn-card"><div class="learn-card-img"><img src="images/article-2.png" alt="How Rent Reporting Can Help Build Your Credit" /></div><div class="learn-card-body"><h3>Here's How Rent Reporting Can Help Build Your Credit</h3></div></article>
-        <article class="learn-card"><div class="learn-card-img"><img src="images/article-3.png" alt="7 Ways to Build Credit When You Have No Credit History" /></div><div class="learn-card-body"><h3>7 Ways to Build Credit When You Have No Credit History</h3></div></article>
+    <h2 class="section-title">Learn more about credit building</h2>
+    <div class="learn-grid">
+      <a href="#" class="learn-card">
+        <div class="learn-card-img">
+          <img src="images/article-1.png" alt="Article about types of credit">
+        </div>
+        <div class="learn-card-body">
+          <h3>Understanding the different types of credit</h3>
+        </div>
+      </a>
+      <a href="#" class="learn-card">
+        <div class="learn-card-img">
+          <img src="images/article-2.png" alt="Article about rent reporting">
+        </div>
+        <div class="learn-card-body">
+          <h3>How rent reporting helps build your credit score</h3>
+        </div>
+      </a>
+      <a href="#" class="learn-card">
+        <div class="learn-card-img">
+          <img src="images/article-3.png" alt="Article about building credit from scratch">
+        </div>
+        <div class="learn-card-body">
+          <h3>How to build credit from scratch in 2024</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════ FAQ ═══════════ -->
+  <section class="faq-section">
+    <h2 class="faq-title">Frequently asked questions</h2>
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is a Credit Builder Account?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>A Credit Builder Account is a small installment loan held by a bank. Your monthly payments are reported to all three credit bureaus — Experian, Equifax, and TransUnion — helping you establish positive payment history. At the end of the term, you receive your savings minus fees.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How does Self build credit?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Self reports your monthly payments to all three major credit bureaus. Making consistent, on-time payments helps establish a positive credit history, which is a key factor in your credit score. Over time, this can help you improve your credit profile.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Which Self product is right for me?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>If you're building credit from scratch, start with a Credit Builder Account. If you already have a Self account and want spending power, unlock the Self Visa® Credit Card. For rent reporting, our Rent & Bills feature reports your payments to all 3 bureaus automatically.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How does Self affect my credit score?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Self members see an average credit score increase of 47 points. Results vary based on individual credit profiles and factors. Self helps build positive payment history, which makes up 35% of your FICO® score calculation.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <h2 class="faq-title">Frequently asked questions</h2>
-      <div class="faq-list" id="faq-list">
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">What is Self?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Self is a financial technology company that helps people build credit and savings at the same time. Our flagship product, the Credit Builder Account, is a small loan held in a CD. As you make monthly payments, they are reported to the three major credit bureaus, helping you build a positive payment history.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">How does Self build credit?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Self reports your on-time monthly payments to all three major credit bureaus — Experian, Equifax, and TransUnion. Payment history is the most important factor in your credit score (35%).</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Which Self product is right for me?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>If you're starting your credit journey or rebuilding damaged credit, the Credit Builder Account is the best starting point — no credit check and reports to all 3 bureaus.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">How does Self affect my credit score?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Members see an average credit score increase of 47 points* with a Credit Builder Account.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Is there a credit check to apply?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>No! There is no hard credit check to apply for a Credit Builder Account. Self only runs a soft inquiry, which doesn't affect your credit score.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">What is the Self Visa® Credit Card?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>The Self Visa® Credit Card is a secured credit card available to Self Credit Builder Account holders. Your security deposit comes directly from your Credit Builder Account savings.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">How does the Credit Builder Account work?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Self lends you a small sum held in a CD. You make monthly payments over 12 or 24 months. Each payment is reported to the bureaus. At the end, you receive your savings minus fees and interest.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Can I cancel anytime?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Yes, you can close your Credit Builder Account at any time. You'll receive your savings accumulated up to that point, minus any applicable fees.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">How long does it take to see credit score improvement?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Most members start to see their score reflected within 1–2 months of making their first payment.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Is Self safe and secure?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer"><p>Yes. Self partners with FDIC-insured banks. Your savings are held in FDIC-insured accounts and protected with bank-grade 256-bit SSL encryption.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
+  <!-- ═══════════ FINAL CTA (Sky Blue) ═══════════ -->
   <section class="cta-section">
-    <div class="container">
-      <div class="cta-card">
-        <div class="cta-content">
-          <h2>Ready to take control<br>of your credit?</h2>
-          <form class="cta-form" id="cta-form">
-            <input type="email" placeholder="Enter your email" class="cta-input" id="cta-email" />
-            <button type="submit" class="btn btn-orange">Get started with Self</button>
-          </form>
-        </div>
-        <div class="cta-image">
-          <img src="images/happy-people.png" alt="Happy Self members" />
-        </div>
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>Ready to take control of your credit?</h2>
+        <form class="cta-form" onsubmit="return false;">
+          <input type="email" class="cta-input" placeholder="Enter your email" aria-label="Email address">
+          <button type="submit" class="btn btn-gold">Get started with Self</button>
+        </form>
+      </div>
+      <div class="cta-illustration">
+        <img src="images/happy-people.png" alt="Diverse group of happy Self members">
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="footer">
-    <div class="container">
+    <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-nav-cols">
-          <div class="footer-col"><h4>LEARN MORE</h4><ul><li><a href="#">What is Self?</a></li><li><a href="#">Pricing</a></li><li><a href="#">Trust &amp; Security</a></li><li><a href="#">Support</a></li><li><a href="#">Reviews</a></li><li><a href="#">How to build credit</a></li></ul></div>
-          <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Investors</a></li><li><a href="#">Press</a></li><li><a href="#">Site map</a></li><li><a href="#">Affiliate</a></li></ul></div>
+        <div class="footer-brand">
+          <div class="footer-logo">Self.</div>
         </div>
-        <div class="footer-store-social">
-          <a href="#" class="footer-store-badge"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><span class="store-badge-label">Download on the</span><br><span class="store-badge-name">App Store</span></div></a>
+        <div class="footer-nav-cols">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#">Credit Builder Account</a></li>
+              <li><a href="#">Self Visa® Card</a></li>
+              <li><a href="#">Rent & Bills</a></li>
+              <li><a href="#">Self Cash</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Disclosures</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-right">
           <a href="#" class="footer-store-badge">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <path d="M3.18 0.34 C2.68 0.62 2.35 1.14 2.35 1.74 L2.35 22.26 C2.35 22.86 2.68 23.38 3.18 23.66 L3.3 23.74 L14.72 12 L3.3 0.26 Z" fill="#4285F4"/>
-              <path d="M18.38 15.83 L14.72 12 L3.18 23.66 C3.53 23.9 3.96 23.97 4.36 23.83 L18.38 15.83 Z" fill="#34A853"/>
-              <path d="M18.38 8.17 L4.36 0.17 C3.96 0.03 3.53 0.1 3.18 0.34 L14.72 12 Z" fill="#EA4335"/>
-              <path d="M21.65 10.44 L18.38 8.17 L14.72 12 L18.38 15.83 L21.65 13.56 C22.44 13.08 22.44 10.92 21.65 10.44 Z" fill="#FBBC04"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.81-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div>
+              <div class="footer-store-label">Download on the</div>
+              <div class="footer-store-name">App Store</div>
+            </div>
+          </a>
+          <a href="#" class="footer-store-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path d="M4 2.5v19l9.5-9.5z" fill="#00C4FF"/>
+              <path d="M4 21.5l9.5-9.5 3 3z" fill="#00A850"/>
+              <path d="M16.5 15l3-3-3-3-9.5 9.5z" fill="#FFA000"/>
+              <path d="M4 2.5l12.5 9.5-3 3z" fill="#FF3A44"/>
             </svg>
-            <div><span class="store-badge-label">GET IT ON</span><br><span class="store-badge-name">Google Play</span></div>
+            <div>
+              <div class="footer-store-label">Get it on</div>
+              <div class="footer-store-name">Google Play</div>
+            </div>
           </a>
           <div class="footer-socials">
-            <a href="#" class="social-icon" aria-label="X"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="1.5"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg>
+            </a>
           </div>
         </div>
       </div>
-      <hr class="footer-hr" />
+      <hr class="footer-hr">
       <div class="footer-legal">
-        <p>Self partners with Lead Bank, Sunrise Banks N.A. and First Century Bank, N.A., Members FDIC.</p>
-        <p><a href="#">Cookies</a> | <a href="#">Terms</a> | <a href="#">Mobile Wallet Terms</a> | <a href="#">Compliance</a></p>
-        <p class="footer-disclaimer">*Average credit score increase based on members who opened a Self Credit Builder Account in Q1 2022. Individual results may vary.</p>
-        <p class="footer-disclaimer">†Testimonials reflect individual results. Results not typical or guaranteed.</p>
-        <p>&copy; Self Financial, Inc. All rights reserved.</p>
+        <p>†Individual results may vary. Building credit takes time and depends on multiple factors including payment history, credit utilization, and account age.</p>
+        <p>*Based on a study of Self customers from 2019-2023. Results may vary.</p>
+        <p>Self Financial, Inc. is not a bank. Banking services provided by Lead Bank, Member FDIC. Self Visa® Credit Card is issued by Lead Bank.</p>
+        <p>© 2024 Self Financial, Inc. All rights reserved. <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
       </div>
     </div>
   </footer>
