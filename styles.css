@@ -395,7 +395,15 @@ button { font-family: var(--ff); }
   letter-spacing: 1px;
 }
 
-/* Bureau logos inside value card */
+/* Bureau composite image */
+.bureau-composite-img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Bureau logos inside value card (legacy, kept for fallback) */
 .bureau-logos {
   display: flex;
   flex-direction: column;
@@ -524,23 +532,28 @@ button { font-family: var(--ff); }
   color: var(--navy);
   opacity: 0.55;
   font-size: 15px;
-  white-space: nowrap;
+  text-align: center;
+  line-height: 1.3;
+}
+.press-logo--npr {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 .press-logo--nyt {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 17px;
-  font-style: italic;
+  font-size: 15px;
 }
 .press-logo--bi {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: 800;
+  line-height: 1.3;
 }
 .press-logo--forbes {
   font-family: 'Georgia', serif;
   font-size: 20px;
-  font-style: italic;
 }
 .press-logo--yahoo {
   color: #6001D2;
@@ -548,8 +561,7 @@ button { font-family: var(--ff); }
 }
 .press-logo--nw {
   font-family: 'Georgia', serif;
-  font-style: italic;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 /* ————— FEATURE CARDS (40px radius) ————— */
@@ -923,22 +935,20 @@ button { font-family: var(--ff); }
   line-height: 1.7;
 }
 
-/* ————— FINAL CTA (Sky blue — NOT navy) ————— */
+/* ————— FINAL CTA — white card + navy full-bleed people ————— */
 .cta-section {
   background: var(--bg);
-  padding: 0 0 0;
+  padding: 0;
 }
 .cta-card {
-  background: linear-gradient(180deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
-  border-radius: var(--r-feature) var(--r-feature) 0 0;
-  padding: 80px 64px 0;
+  background: var(--white);
+  padding: 72px 40px 64px;
   text-align: center;
-  overflow: hidden;
 }
 .cta-content h2 {
   font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
-  color: var(--white);
+  color: var(--navy);
   line-height: 1.2;
   margin-bottom: 32px;
   max-width: 700px;
@@ -949,32 +959,38 @@ button { font-family: var(--ff); }
   display: flex;
   gap: 12px;
   max-width: 500px;
-  margin: 0 auto 48px;
+  margin: 0 auto;
 }
 .cta-input {
   flex: 1;
   padding: 14px 20px;
-  border: 1.5px solid rgba(255,255,255,0.3);
+  border: 1.5px solid var(--border-light);
   border-radius: var(--r-input);
-  background: rgba(255,255,255,0.15);
-  color: var(--white);
+  background: var(--white);
+  color: var(--navy);
   font-family: var(--ff);
   font-size: 15px;
   outline: none;
   transition: border-color 0.2s;
 }
-.cta-input::placeholder { color: rgba(255,255,255,0.6); }
-.cta-input:focus { border-color: rgba(255,255,255,0.7); }
-.cta-illustration {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-.cta-illustration img {
+.cta-input::placeholder { color: var(--text-muted); }
+.cta-input:focus { border-color: var(--accent-blue); }
+
+/* Full-bleed people illustration — navy background matches footer */
+.cta-people-wrap {
+  background: var(--navy);
   width: 100%;
-  max-height: 300px;
-  object-fit: contain;
+  overflow: hidden;
+  line-height: 0; /* removes inline-block gap */
+}
+.cta-people-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center bottom;
+  max-height: 340px;
 }
 
 /* ————— FOOTER ————— */
