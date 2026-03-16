@@ -395,28 +395,50 @@ button { font-family: var(--ff); }
   letter-spacing: 1px;
 }
 
-/* Bureau composite image */
-.bureau-composite-img {
-  width: 85%;
-  height: 85%;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-/* Bureau logos inside value card (legacy, kept for fallback) */
-.bureau-logos {
+/* Bureau text logos (pure CSS — no images needed) */
+.bureau-text-logos {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100%;
 }
-.bureau-logo-img {
-  height: 32px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+.bureau-name {
+  color: var(--white);
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+.bureau-name--experian {
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+.experian-dots {
+  font-size: 18px;
+  margin-right: 2px;
+  vertical-align: middle;
+  letter-spacing: -2px;
+}
+.bureau-name--equifax {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.bureau-name--transunion {
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.bureau-name--transunion strong {
+  font-weight: 800;
 }
 
 /* ————— APP STORE BADGES (large horizontal pills) ————— */
